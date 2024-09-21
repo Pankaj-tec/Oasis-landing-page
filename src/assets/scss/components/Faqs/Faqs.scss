@@ -1,0 +1,111 @@
+.faq {
+  margin-bottom: 152px;
+
+  &__heading {
+    margin-bottom: 0.75rem;
+    text-align: center;
+  }
+
+  &__desc {
+    margin-bottom: 52px;
+    text-align: center;
+  }
+
+  &__accordions {
+    max-width: 782px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  &__items {
+    margin-bottom: 1rem;
+    border: 0.5px solid #0000001A;
+    padding: 0.75rem;
+    border-radius: 6px;
+    box-shadow: $shadow;
+    transition: 0.3s ease;
+
+    &:hover {
+      background-color: $light-gray;
+    }
+  }
+
+  &__head {
+    @include d-flex(row, center, space-between);
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  &__title {
+    font-family: $font-jakarta;
+    font-weight: $fw-semibold;
+  }
+
+  &__icon {
+    max-width: 1.25rem;
+    padding: 4px;
+
+    & img {
+      max-width: 0.75rem;
+    }
+  }
+
+  &__minus-img {
+    display: none;
+  }
+
+  &__contentDesc {
+    font-family: $font-jakarta;
+    display: none;
+    transition: 0.3s ease;
+
+  }
+
+  &__items.active .faq__contentDesc {
+    display: block;
+  }
+
+  // media query 1199
+  @include largeMobile {
+    &__desc {
+      margin-bottom: 2rem;
+    }
+  }
+
+  // media query 1024
+  @include smallDesktop {
+    margin-bottom: 5rem;
+  }
+
+  // media query 768
+  @include largeMobile {
+    margin-bottom: 4rem;
+
+    &__heading {
+      font-size: 2rem;
+    }
+  }
+
+  // meadia Query 480
+  @include mobile {
+    margin-bottom: 3rem;
+
+    &__heading {
+      font-size: 1.5rem;
+    }
+
+    &__items {
+      padding-block: 0.5rem;
+    }
+
+    &__desc {
+      margin-bottom: 1.5rem;
+    }
+
+    &__title {
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,178 @@
+.contact {
+  margin-bottom: 152px;
+  position: relative;
+
+  &:before {
+    content: url("/assets/images/before-icon.svg");
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    transform: rotate(-180deg);
+    z-index: - 1;
+  }
+
+  &__cont {
+    @include d-flex(row, center, space-between);
+    gap: 60px;
+
+  }
+
+  &__left {
+    max-width: 589px;
+    width: 100%;
+  }
+
+  &__img {
+    border-radius: 1rem;
+
+    & img {
+      border-radius: 1rem;
+      max-width: 589px;
+      display: block;
+    }
+  }
+
+  &__right {
+    max-width: 493px;
+    width: 100%;
+  }
+
+  &__heading {
+    margin-bottom: 0.75rem;
+  }
+
+  &__desc {
+    color: rgba($black, 80%);
+    margin-bottom: 1rem;
+  }
+
+  &__inner {
+    @include d-flex(row, center, space-between);
+    gap: 10px;
+    margin-bottom: 0.5rem;
+  }
+
+  &__label {
+    margin-bottom: 6px;
+    color: rgba($black, 80%);
+    display: block;
+
+    &--emailLebel {
+      margin-bottom: 0.5rem;
+    }
+
+    &--textWrap {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__input,
+  &__textarea {
+    max-width: 100%;
+    border-radius: 4px;
+    width: 100%;
+    box-shadow: 0px 0px 24px 0px #00000014;
+    border: none;
+    outline: none;
+    padding: 15px 15px 15px 13px;
+    margin-top: 6px;
+    border: 1px solid transparent;
+    transition: 0.3s ease;
+
+    &::placeholder {
+      color: rgba($black, 60%);
+      font-size: $fs-md;
+      line-height: 155%;
+    }
+
+    &:focus {
+      border-color: rgba($primary-color, 50%);
+    }
+  }
+
+  &__textarea {
+    padding: 20px 15px 20px 13px;
+    resize: none;
+  }
+
+  &__submit {
+    max-width: 100%;
+    width: 100%;
+
+    &:hover {
+      background-color: $light-brwon;
+      color: $white;
+    }
+  }
+
+  // media query 1024
+  @include smallDesktop {
+    margin-bottom: 5rem;
+
+    &__cont {
+      gap: 3rem;
+
+    }
+  }
+
+  // media query 768
+  @include largeMobile {
+    margin-bottom: 4rem;
+
+    &__cont {
+      flex-direction: column;
+
+    }
+
+    &__heading,
+    &__desc {
+      text-align: center;
+    }
+
+    &__heading {
+      font-size: 2rem;
+    }
+
+    &__right {
+      max-width: 100%;
+    }
+
+    &__label {
+      &--textWrap {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &__img {
+      padding-inline: 1rem;
+    }
+  }
+
+  // media query 480
+  @include mobile {
+    margin-bottom: 3rem;
+
+    &__heading {
+      font-size: 1.5rem;
+    }
+
+    &:before {
+      display: none;
+    }
+
+    &__inner {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    &__label {
+      &--textWrap {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__submit {
+      font-size: $fs-md;
+    }
+  }
+}

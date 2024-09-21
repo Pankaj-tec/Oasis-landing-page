@@ -1,0 +1,114 @@
+.about {
+  position: relative;
+  margin-bottom: 152px;
+
+  &::after {
+    content: url("/assets/images/before-icon.svg");
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -99;
+    max-width: 150px; 
+    height: auto;
+    width: 100%;
+    display: inline-block;
+
+  }
+
+  &__cont {
+    max-width: 1247px;
+    width: 100%;
+    padding-inline: 1rem;
+    margin-inline: auto;
+    @include d-flex(row, center, space-between);
+    gap: 52px;
+    position: relative;
+
+    &:before {
+      content: url("/assets/images/before-icon.svg");
+      position: absolute;
+      bottom: -26.8%;
+      left: -90px;
+      transform: rotate(-180deg);
+      z-index: -99;
+    }
+  }
+
+  &__left {
+    max-width: 590px;
+    width: 100%;
+  }
+
+  &__img {
+    & img {
+      max-width: 590px;
+    }
+  }
+
+  &__right {
+    max-width: 572px;
+    width: 100%;
+    z-index: 99;
+    position: relative;
+  }
+
+  &__heading {
+    margin-bottom: 0.75rem;
+  }
+
+  &__blue {
+    color: $primary-color;
+  }
+
+  &__desc {
+    margin-bottom: 0.5rem;
+    color: $black;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  // meadia query 1024
+  @include desktop {
+    margin-bottom: 6rem;
+
+    &__cont {
+      gap: 2.5rem;
+    }
+  }
+
+  // meadia query 768
+  @include largeMobile {
+    margin-bottom: 5rem;
+
+    &__heading {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    &__cont {
+      gap: 2.5rem;
+      flex-direction: column;
+    }
+
+    &__right {
+      max-width: 100%;
+      padding-inline: 1rem;
+    }
+
+    &__img {
+      padding-inline: 1rem;
+
+    }
+  }
+
+  // media queries 480
+  @include mobile {
+    margin-bottom: 3rem;
+
+    &__heading {
+      font-size: 1.5rem;
+    }
+  }
+}

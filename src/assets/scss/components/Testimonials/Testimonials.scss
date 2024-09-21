@@ -1,0 +1,175 @@
+.testimonials {
+  margin-bottom: 152px;
+  position: relative;
+
+  &::after {
+    content: url("/assets/images/before-icon.svg");
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -2;
+  }
+
+  &__heading {
+    margin-bottom: 52px;
+    text-align: center;
+  }
+
+  &__card {
+    max-width: 677px;
+    width: 100%;
+    margin-inline: auto;
+    @include d-flex(column, center, center);
+    text-align: center;
+    padding-block: 45px;
+    position: relative;
+
+    &::after {
+      content: url("/assets/images/quation.svg");
+      position: absolute;
+      bottom: 40%;
+      left: -40px;
+      z-index: -99;
+    }
+
+  }
+
+  &__authImg {
+    margin-bottom: 1rem;
+
+    & img {
+      max-width: 102px;
+      height: 102px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: 88% 0px;
+    }
+  }
+
+  &__authName {
+    font-size: $fs-3xl;
+    font-weight: $fw-semibold;
+    line-height: 140%;
+    margin-bottom: 4px;
+  }
+
+  &__position {
+    margin-bottom: 4px;
+    color: $black;
+  }
+
+  &__review {
+    @include d-flex(row, center, flex-start);
+    gap: 5px;
+    margin-bottom: 1.5rem;
+  }
+
+  &__star {
+    cursor: pointer;
+
+    & img {
+      max-width: 15px;
+      height: 15px;
+    }
+  }
+
+  &__desc {
+    margin-bottom: 1.5rem;
+    color: $black;
+  }
+
+  & .swiper {
+    &-pagination {
+      bottom: 28px;
+    }
+
+    &-slide-active {
+      box-shadow: $shadow;
+      border-radius: 1rem;
+    }
+
+    span.swiper-pagination-bullet {
+      height: 11px;
+      width: 11px;
+      border: 0.6px solid $primary-color;
+      background-color: $white;
+    }
+
+    span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+      background-color: $primary-color;
+      height: 14px;
+      width: 14px;
+      border: transparent;
+    }
+  }
+
+  // media query 1024 
+  @include smallDesktop {
+    margin-bottom: 5rem;
+  }
+
+  // media query 768 
+  @include largeMobile {
+    margin-bottom: 4rem;
+
+    &::after {
+      display: none;
+    }
+
+    &__heading {
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    &__card {
+      max-width: 100%;
+      width: 100%;
+      padding-inline: 0.5rem;
+      padding-block: 2rem;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &__authImg {
+      margin-bottom: 0.75rem;
+
+      & img {
+        max-width: 95px;
+        height: 95px;
+      }
+    }
+
+    &__authName {
+      font-size: 20px;
+    }
+
+    &__review {
+      margin-bottom: 0.75rem;
+    }
+
+    & .swiper {
+      &-slide {
+        padding: 0 12px;
+      }
+    }
+  }
+
+  // media query 480
+  @include mobile {
+    margin-bottom: 3rem;
+
+    &__heading {
+      font-size: 1.5rem;
+    }
+
+    &__authImg {
+
+      & img {
+        max-width: 80px;
+        height: 80px;
+      }
+    }
+  }
+}
